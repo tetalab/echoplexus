@@ -1,110 +1,110 @@
 [echoplexus](https://echoplex.us) (v0.2.1)
 ==================
 
-Dive in! [chat.echoplex.us](https://chat.echoplex.us "https://chat.echoplex.us")
+Testez! [chat.echoplex.us](https://chat.echoplex.us "https://chat.echoplex.us")
 
-Join the developer chat @ [chat.echoplex.us/echodev](https://chat.echoplex.us/echodev "Echoplexus Developer Chat")
+Rejoignez la salle de discussion des dev @ [chat.echoplex.us/echodev](https://chat.echoplex.us/echodev "Echoplexus Developer Chat")
 
-In a nutshell
--------------
+En résumé
+---------
 
-Echoplexus is an anonymous, web-based, IRC-like chatting platform that makes its best effort to respect your privacy.  It allows you to create public or private channels.  You can secure a pseudonym for linkable anonymity (think: `/msg nickserv register ____`.  You can code and draw together in real time.  **As of v0.2.0, you can make Peer2Peer video and voice calls with the people in your channel.**
+Echoplexus est une plateforme de chat anonyme, basée sur le web, ressemblant à IRC qui fait de son mieux pour respecter votre privacy. Il vous permet de créer des salles de discussion publiques ou privées. Vous pouvez sécuriser un pseudonyme à une anonymisation liée avec `/msg nickserv register ____`. Vous pouvez coder et dessiner à plusieurs en temps réel. **Depuis la version v0.2.0, vous pouvez passer des appels téléphoniques et vidéos Peer2Peer avec les personnes sur votre salon de discussion.**
 
-Future Goals
-------------
+Prochains Objectifs
+-------------------
 
-- Peer2Peer file transfer via WebRTC
-- Server hosted file transfer (for when WebRTC is unavailable, for more persistent logs of files)
-- Peer2Peer chat, boostrapped by Echoplexus (to facilitate off-the-record communication)
-- End2End encryption
-- Increased selection of languages for the real-time collaborative REPL
-- User access control
+- Transfert de fichiers P2P par WebRTC
+- Transfert de fichiers avec dépot sur serveur (quand WebRTC n'est pas disponible, pour plus de persistance sur l'historique des fichiers)
+- Chat Peer2Peer, lancé par Echoplexus (pour faciliter les communications off-the-record)
+- Cryptage Point-à-Point
+- Une plus grande séléction de language pour la collaboration REPL en temps réel
+- Un contrôle d'accès utilisateur
 - ...
 
-Be sure to check out the planned [enhancements](https://github.com/qq99/echoplexus/issues?labels=enhancement&milestone=&page=1&state=open "Planned Enhancements")
+Vous pouvez consulter les prochaines [fonctionnalités](https://github.com/qq99/echoplexus/issues?labels=enhancement&milestone=&page=1&state=open "Planned Enhancements")
 
-What is it?
------------
+Qu'est-ce que c'est?
+--------------------
 
-echoplexus was designed to be a modular.  It started from a simple chatting base application and has really grown to encompass many different things.
+Echoplexus est conçu pour être modulaire. Il commence par une simple application de chat et s'est agrandit pour inclure beaucoup de choses différentes.
 
-Currently, echoplexus is composed of 4 modules: Chat, Code, Draw, and Call.  Conceivably, you could run any combination (or just 1) of these modules, depending on your needs.
+Echoplexus inclus actuellement 4 modules: Chat, Code, Draw et Call. De fait, vous pouvez faire tourner toute combinaison (ou juste 1) de ces modules suivant vos besoins.
 
-Why would I want this?
-----------------------
+Pourquoi aurai-je besoin de ça?
+-------------------------------
 
-Echoplexus works well for teams that want to enable rich, secure, and truly privacy respecting chat.  Since it's OSS and fairly easy to install, you can have your own private communication infrastructure without needing to rely on cloud services.  There's peace of mind in that.  We've found it's also great for groups of friends who care about their data (and who may or may not be looking at it).
+Echoplexus fonctionne bien pour les groupes de personnes qui veulent un système de chat riche, sécurisé et vraiment respectueux de la privacy. Comme il est open-source et facile a installer, vous pouvez avoir votre propre infrastructure de communication sans avoir besoin d'un service basé sur le cloud. Il y a une tranquilité d'esprit là-dedans. Nous trouvons aussi que c'est une bonne solutions pour les personnes qui prennent soin de leurs données (et de savoir qui peut ou ne peut pas regarder ces données).
 
-Many teams might use a pay-to-use web-based communication platform.  There are many out there, and we've derived some inspiration from them in our development.  Echoplexus bridges that gap with open source software.
+Beaucoup de groupes utilisent des plateformes de communications payantes basées sur le web. Il y a beaucoup de solutions de ce type, et nous nous en sommes inspirés pour notre développement. Echoplexus fait le lien entre ces plateformes et les logiciels open-source.
 
-Others use IRC.  However, it's somewhat time consuming to set up a server, many people don't really want to set up a client, and they certainly don't want to configure servers and ports in their client.  In the end, most of the users are stuck with a text-only interface (no rich media).  Your IP is also visible to others unless you go through measures to hide it.
+D'autres utilisent IRC. Cependant, cela peut prendre du temps de monter son propre serveur, beaucoup de personnes ne veulent pas configurer leur client IRC, et ils ne veulent certainement pas configurer les serveurs et les ports de ce client. Au final, la plupart des utilisateurs sont bloqués dans une interface texte (sans médias). De plus, votre IP est aussi visible par les autres à moins que vous ayez pris des mesures pour la cacher.
 
-Other services (like Google Talk / Hangouts) are OK, but by default they are 1v1 chat, a closed client platform, and cloud-based.
+Les autres services (comme Google Talk / Hangouts) sont OK, mais par défaut pour des communication de personne à personne, dans des clients propiétaires, et basé sur du cloud.
 
-Almost all of the alternatives require you to specifiy some kind of name before you start chatting.  Worse, register with an e-mail address.  I always thought the biggest barrier was requiring the user to perform actions he doesn't care about completing -- he's got many other things to do!  Anonymity can be conducive to great conversations.
+Quasiment toutes les alternatives vous demanderont de spécifier un identifiant avant de commencer à discuter. Pire, certaines vous demanderont de vous authentifier avec votre adresse email. J'ai toujours pensé que la plus grosse barrière d'entrée a été de demander aux utilisateurs de faire quelque chose qu'ils ne voulaient pas -- il a surement pleins d'autres choses à faire! L'anonymat peut conduire à de grandes conversations.
 
 Chat
 ----
 
-The most important part of echoplexus is the support for anonymity.  Users hate sign-ups.  Anonymity fosters freedom of speech.  Linkable anonymity is also possible.
+La partie la plus importante d'Echoplexus est le support de l'anonymat. Les utilisateur détestent les formulaires d'enregistrement. L'anonymat permet le liberté d'expression. L'anonymat lié est aussi possible.
 
-echoplexus will attempt to embed any image URLs directly into the Media bar on the right side.  Similarly, it will attempt to parse YouTube URLs and embed an object.  When the server encounters a URL, it can take a screenshot of the page in question along and attempt to provide a short excerpt to the user.  To protect your privacy, media embedding is disabled for the client by default.
+Echoplexus tentera d'afficher toutes les images directement dans la barre de Media sur le côté droit. De même, il tentera de parser les URL YouTube afin de les afficher. Quand le serveur rencontre une URL, il prend un screenshot de la page en question et essaye de fournir le titre de cette page à l'utilisateur. Afin de protéger votre privacy, l'affichage de ces images est désactivé par défaut.
 
-You can edit any message you've sent up to 2 hours ago, as long as you haven't lost your connection.  You can edit across connections if you were identified when you sent the message.  You can do this by double clicking the message, or clicking the pencil icon that appears while hovering the message.
+Vous pouvez éditer tous les messages que vous avez envoyé dans les 2 dernières heures, tant que vous n'avez pas perdu votre connexion. Vous pouvez éditer après une déconnexion si vous étiez identifiés quand vous avez envoyé le message. Vous pouvez faire cela en double-cliquant sur le message, ou en cliquant sur l'icone de crayon qui apparait quand vous placez votre souris sur le message.
 
-When you join a channel, you'll automatically sync some of the most recent chat history you may have missed while you were away.  At any time, you can pull the chatlog history for that channel.  Messages sent by identified users will have a green lock icon while hovering the chat message, allowing you to protect your identity throughout history.
+Quand vous rejoignez un salon de discussion, l'historique des conversations récentes que vous auriez pu rater sera automatiquement mis à jour. At tout moment, vous pouvez récupérer l'historique des conversations pour ce salon de discussion. Les messages envoyés par les utilisateurs identifiés sont reconnaissable par un icone de cadenas vert, cela permettant de protéger votre identité à travers cet historique.
 
-Currently Supported Commands:
-- `/join [channel_name]`: Join a channel
-- `/leave`: Leaves the current channel
-- `/topic [topic string]`: Set the topic of conversation for the channel (the message that sits visible at all times at the top)
-- `/broadcast [a chat message]`: Send the message to every channels that you're connected to.  Alias: `/bc`
-- `/nick [your_nickname]`: Changes your name from Anonymous; this preference is stored in a cookie on a per channel basis
-- `/register [some_password]`: Facilitates linkable anonymity; people talking to you yesterday can rest assured you're the same person today (and not an impersonator trying to steal your nickname) by registering and identifying.
-- `/identify [your_password]`: Assume command of your nickname, and get a green lock icon beside it (signifying to others that you are identified).
-- `/private [channel_password]`: Makes a channel private.  Only those with the password may enter it.
-- `/password [channel_password]`: Supply the password to a private channel after joining it.  Incorrect attempts will notify everybody in the room.
-- `/public`: Make the private channel a public channel.
-- `/whisper [nickname]`: Send a private message that is visible to anybody with the nickname you've supplied.  Aliases: `/w`, `/tell`, `/t`, `/pm`.  *Pro-tip:* Press "ctrl+r" to quick-reply to the last person who has whispered you.
-- `/pull [N]`: Sync the N latest chat messages that you've missed while you weren't connected to the channel.  Currently, maximum is set to 100 for UI responsiveness until a more efficient rendering method is added.
-- `[partial nickname]+<TABKEY>`: Autocompletes (based on L-Distance) to the name of somebody in the channel
-- `@[nickname]`: Gets the attention of the user in question
-- `/color [#FFFFFF]`: Supply a 6-digit hex code with or without the `#`, and change your nickname's color
-- `/edit #[integer] [new body text]`: Changes the body text of a specific message to something else.  Useful for correcting typos and censoring yourself.  You can also double click on a chat message to edit inline-- press enter to confirm, escape or click elsewhere to cancel.
-- `>>[integer]`: Quotes a specific chat message.  Clicking the Reply icon on the chat message will automatically add this for you.
+Commandes supportées:
+- `/join [nom_du_salon]`: Rejoindre un salon de discussion
+- `/leave`: Quitter le salon de discussion en cours
+- `/topic [description du sujet]`: Changer le sujet de conversation du salon de discussion (le message restera visible en haut du salon tout le temps)
+- `/broadcast [message]`: Envoyer un message sur tous les salons auxquel vous êtes connectés.  Alias: `/bc`
+- `/nick [votre_pseudo]`: Changer de pseudonyme (Anonymous par défaut), celui-ci est enregistré dans un cookie distinct pour chaque salon de discussion
+- `/register [mot_de_passe]`: Activer l'anonymat lié; les gens qui vous parlaient hier peuvetn s'assurer que vous êtes la même personne aujourd'hui (et non quelqu'un qui a pris votre pseudonyme) en vous enregistrant et en vous identifiant.
+- `/identify [mot_de_passe]`: Prendre possesion de votre pseudonyme, et afficher le cadenas vert à côté de celui-ci dans la liste des utilisateurs (indique aux autres personnes que vous êtes identifié).
+- `/private [mot_de_passe_du_salon]`: Rendre le salon e discussion privé. Seuls ceux avec le mot de passe peuvent y participer.
+- `/password [mot_de_passe_du_salon]`: Fournir le mot de passe d'un salon de discussion privé après l'avoir rejoint. Les essais incorrectes seront signalés à tous les utilisateurs présents dans ce salon.
+- `/public`: Faire d'un salon privé un salon publique.
+- `/whisper [pseudonyme] [message privé]`: Envoyer un message privé qui ne sera visible que par la personne indiqué par le pseudonyme.  Alias: `/w`, `/tell`, `/t`, `/pm`.  *Pro-tip:* Utiliser "ctrl+r" pour répondre rapidement à la dernière personne qui vous a envoyé un message privé.
+- `/pull [N]`: Synchoniser les N derniers messages que vous avez raté quand vous n'étiez pas connecté au salon de discussion. Le maximum est actuellement fixé à 100 afin de garder un UI répondant jusqu'à qu'une nouvelle méthode d'affichage soit trouvée.
+- `[pseudonyme partiel]+<TABKEY>`: Autocomplétion (basée sur L-Distance) du pseudonyme de quelqu'un dans le salon de discussion.
+- `@[pseudonyme]`: Avoir l'attention de l'utilisateur en question.
+- `/color [#FFFFFF]`: Fournir un code de 6 chiffres hexadécimal avec ou sans le `#` afin de changerla couleur de votre pseudonyme.
+- `/edit #[numéro] [nouveau message]`: Changer le contenu d'un message spécifique. Cela est utile pour corriger les fautes d'orthographe ou pour vous auto-censurer. Vous pouvez aussi double-clicker sur un message pour l'éditer en ligne, pressez Entrée pour confirmer, Esc ou cliquez ailleurs pour annuler.
+- `>>[integer]`: Citer un message spécifique. Cliquez sur l'icone de Réponse sur un message pour indiquer automatiquement cette commande.
 
-*Note:* Nickname registrations are considered on a per-channel basis to increase the available nickspace for all users.  Thus, you will have to register for a specific nickname many times across each channel you join.
+**Note:** L'enregistrement d'un pseudonyme est différencié sur chaque salon de discussion afin d'augmenter la possibilité d'utilisation de pseudonyme pour tous les utilisateurs. Donc, vous devrez enregistrer votre pseudonyme à chaque fois que vous rejoignez un nouveau salon.
 
 Code
 ----
 
-Currently, interactive and collaborative HTML & JavaScript is supported.  A sandboxed `iframe` is used to protect the contents of your browser, but just to be completely safe, no code is evaluated without your consent.  A `LiveReload` checkbox allows you to re-evaluate as you or someone else types.  A `Refresh` button resets & wipes the `iframe` state.
+Actuellement, seule l'édition collaborative et intéractive de HTML et Javascript est supportée. Une `iframe` sandbox est utilisée pour protéger le contenu du navigateur, mais pour être complétement sûr, aucun code n'est lancé sans votre consentement. Une fonction de `LiveReload` vous permet de relancer le code quand vous, ou quelqu'un d'autre, l'édite. Un bouton `Refresh` efface et remet à jour l'état de l'`iframe`.
 
-The `iframe` has access to `jQuery` and `underscore.js` for user convenience.  More libraries may be exposed in the future.
+L'`iframe` a accès au librairies `jQuery` et `underscore.js` pour aider l'utilisateur. Plus de librairies pourraient être inclues prochainement.
 
 Draw
 ----
 
-Right now, the Draw capabilities are fairly basic; just enough to facilitate sharing a persistent whiteboard with the people you're chatting with.  I do not think that there is a need to completely re-invent the wheel (and end up re-implementing Photoshop/Illustrator here).
+Les capacités de Draw sont très basiques, assez pour faciliter l'échange d'un tableau blanc persistant avec les personnes avec qui vous discutez. Je ne pense pas qu'il y ait un besoin de complétement ré-inventer la roue (et finir par ré-implenter un nouveau Photoshop/Illustrator ici).
 
 Call
 ----
 
-Make a secure Peer2Peer audio & video call with everyone in the same channel as you, using WebRTC.  For this, you'll probably want to use Chrome Canary/Beta or Firefox Aurora/Beta, which, at the time of writing, have experimental WebRTC support.
+Passez des appels audio et vidéo Peer2Peer avec toutes les personnes présentes dans le même salon de discussion que vous, en utilisant WebRTC. Pour faire cela, vous devrez probablement utiliser Chrome Canary/Beta ou Firefox Aurora/Beta, qui à l'écriture de ce document, inclus le support expérimental WebRTC.
 
-Security
+Securité
 --------
 
-*echoplexus is not completely secure, but it's getting there.*
+**Echoplexus n'est pas complétement sécurisé, mais on y arrive**
 
-Your registration, identification, and private channel passwords are first salted with 256 random bytes from node's `crypto.randomBytes`.  Then, they are run through 4096 iterations of `crypto.pbkdf2` with a key length of 256 bytes before the is stored in Redis.  The channel passwords for private channels are treated similarly.  In your deployment, these measures can be considered meaningless if you do not use HTTPS.
+Votre enregistrement, identification, et les mots de passe des salons privés sont d'abord *salted* avec un random de 256 bytes en utilisant `crypto.randomBytes` de node. Ensuite, ils sont passés dans 4096 itérations de `crypto.pbkdf` avec une clé de 256 bytes avant d'être stockés dans Redis. Les mots de passes de salons privés sont traités de la même façon. Dans votre installation, ces mesures peuvent être considérées comme inutiles si vous n'utilisez pas HTTPS.
 
-I'd especially appreciate any input in securing echoplexus.  You should rest assured that this project will take security very seriously.  *Currently, the chatlogs of a private channel are not encrypted!*
+Nous apprécions grandement tout feedback sur la sécurité d'Echoplexus. Restez assuré que ce projet considère sa sécurité comme un enjeu très sérieux. **Actullement, les logs de discussions d'un salon privé ne sont pas encryptés!**
 
-Install
--------
+Installation
+------------
 
-See [INSTALL.md](https://github.com/qq99/echoplexus/blob/master/INSTALL.md).
+Voir [INSTALL.md](https://github.com/qq99/echoplexus/blob/master/INSTALL.md).
 
 License:
 -------
