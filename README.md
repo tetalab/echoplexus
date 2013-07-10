@@ -1,7 +1,7 @@
 [echoplexus](https://echoplex.us) (v0.2.1)
 ==================
 
-Testez! [chat.echoplex.us](https://chat.echoplex.us "https://chat.echoplex.us")
+Testez! [chat.tetalab.org](https://chat.tetalab.org "https://chat.tetalab.org")
 
 Rejoignez la salle de discussion des dev @ [chat.echoplex.us/echodev](https://chat.echoplex.us/echodev "Echoplexus Developer Chat")
 
