@@ -1,4 +1,4 @@
-define(['jquery','underscore','backbone','client','regex',
+define(['jquery','underscore','backbone','client','regex', 'ui/Faviconizer',
 		'modules/chat/Autocomplete',
 		'modules/chat/Scrollback',
 		'modules/chat/Log',
@@ -6,7 +6,7 @@ define(['jquery','underscore','backbone','client','regex',
 		'ui/Growl',
 		'text!modules/chat/templates/chatPanel.html'
 	],
-	function($,_,Backbone,Client,Regex,Autocomplete,Scrollback,Log,ChatLog,Growl,chatpanelTemplate){
+	function($,_,Backbone,Client,Regex,faviconizer,Autocomplete,Scrollback,Log,ChatLog,Growl,chatpanelTemplate){
 	var ColorModel = Client.ColorModel,
 		ClientModel = Client.ClientModel,
 		ClientsCollection = Client.ClientsCollection,
@@ -103,6 +103,9 @@ define(['jquery','underscore','backbone','client','regex',
 					nickname: '',
 					class: 'client'
 				});
+
+				window.disconnected = true;
+				faviconizer.setDisconnected();
 			});
 			//On reconnection attempts, print out the retries
 			self.socket.on("reconnecting",function(nextRetry){
@@ -159,6 +162,9 @@ define(['jquery','underscore','backbone','client','regex',
 
 			// start the countdown for idle
 			this.startIdleTimer();
+
+			window.disconnected = false;
+			faviconizer.setConnected();
 		},
 
 		autoNick: function () {
@@ -206,8 +212,8 @@ define(['jquery','underscore','backbone','client','regex',
 				atMyNick = "@" + myNick;
 
 			// check to see if me.nick is contained in the msgme.
-			if (msgBody.indexOf(atMyNick) !== -1 ||
-				msg.class === "private") {
+			if ((msgBody.toLowerCase().indexOf(atMyNick.toLowerCase()) !== -1) ||
+				(msgBody.toLowerCase().indexOf("@all") !== -1)) {
 
 				// do not alter the message in the following circumstances:
 				if (msg.class) {
